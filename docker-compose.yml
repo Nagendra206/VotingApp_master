@@ -16,4 +16,4 @@ services:
       MYSQL_USER: votingapp
       MYSQL_PASSWORD: votingapp
     ports:
-      - "3306:3306"  # Map container port to host port
+      - "3307:3306"  # Map container port to host port
