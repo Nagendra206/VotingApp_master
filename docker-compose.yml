@@ -9,11 +9,14 @@ services:
       - "9002:9002"  # Map container port to host port
   # MySQL database container
   mysqldb:
-    image: "mysql:8.0"
+    image: "mysql:8.0.29"
     environment:
       MYSQL_ROOT_PASSWORD: votingapp
       MYSQL_DATABASE: votingapp
       MYSQL_USER: votingapp
       MYSQL_PASSWORD: votingapp
+      SPRING.DATASOURCE.URL: jdbc:mysql://mysqldb:3306/votingapp?allowPublicKeyRetrieval=true 
+    depends_on:
+      - mysqldb
     ports:
       - "3307:3306"  # Map container port to host port
