@@ -7,9 +7,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "9002:9002"  # Map container port to host port
-    depends_on:
-      - mysqldb  # This ensures spring-app waits for mysql-db to be ready
-
   # MySQL database container
   mysqldb:
     image: "mysql:8.0"
