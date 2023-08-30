@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-alpine
+FROM mediasol/openjdk17-slim-jprofiler
 VOLUME /tmp
 ADD target/VotingApp-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 9002 
