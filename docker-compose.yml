@@ -11,9 +11,9 @@ services:
   mysqldb:
     image: "mysql:8.0"
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: votingapp
       MYSQL_DATABASE: votingapp
-      MYSQL_USER: root
-      MYSQL_PASSWORD: password
+      MYSQL_USER: votingapp
+      MYSQL_PASSWORD: votingapp
     ports:
       - "3307:3306"  # Map container port to host port
