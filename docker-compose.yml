@@ -9,7 +9,7 @@ services:
       - "9002:9002"  # Map container port to host port
   # MySQL database container
   mysqldb:
-    image: "mysql:8.0.29"
+    image: "mysql:8.0"
     environment:
       MYSQL_ROOT_PASSWORD: votingapp
       MYSQL_DATABASE: votingapp
