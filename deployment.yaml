@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voting-webapp
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  selector:
+    matchLabels:
+      app: voting-webapp
+  template:
+    metadata:
+      labels:
+        app: voting-webapp
+    spec:
+      containers:
+      - image: nagendra206/voting-webapp:voting
+        name: voting-webapp
+        ports:
+        - containerPort: 9002
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: voting-webapp
+spec:
+  selector:
+    app: voting-webapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9002
+    nodePort: 31005
+  type: NodePort
