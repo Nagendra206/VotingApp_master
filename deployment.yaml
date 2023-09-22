@@ -4,11 +4,6 @@ metadata:
   name: voting-webapp
 spec:
   replicas: 1
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
   selector:
     matchLabels:
       app: voting-webapp
